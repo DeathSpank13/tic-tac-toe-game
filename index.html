@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Parlour — Tic-Tac-Toe</title>
+    <meta name="description" content="A retro neon Tic-Tac-Toe game. Play a friend or an unbeatable computer." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <main class="game" role="main">
+        <header class="masthead">
+            <p class="kicker">PIXEL PARLOUR</p>
+            <h1 class="title">TIC<span class="dash">-</span>TAC<span class="dash">-</span>TOE</h1>
+        </header>
+
+        <!-- Mode selection -->
+        <section class="controls" aria-label="Game mode">
+            <div class="mode-group" role="group" aria-label="Choose opponent">
+                <button class="mode-btn is-active" data-mode="cpu" type="button">VS COMPUTER</button>
+                <button class="mode-btn" data-mode="human" type="button">2 PLAYERS</button>
+            </div>
+            <div class="mark-group" id="markGroup" role="group" aria-label="Choose your mark">
+                <span class="mark-label">YOU PLAY:</span>
+                <button class="mark-btn is-active" data-mark="X" type="button">X</button>
+                <button class="mark-btn" data-mark="O" type="button">O</button>
+            </div>
+        </section>
+
+        <!-- Status line -->
+        <p class="status" id="status" aria-live="polite">Player X's turn</p>
+
+        <!-- Board -->
+        <section class="board" id="board" role="grid" aria-label="Tic-Tac-Toe board">
+            <button class="cell" data-index="0" role="gridcell" aria-label="cell 1" type="button"></button>
+            <button class="cell" data-index="1" role="gridcell" aria-label="cell 2" type="button"></button>
+            <button class="cell" data-index="2" role="gridcell" aria-label="cell 3" type="button"></button>
+            <button class="cell" data-index="3" role="gridcell" aria-label="cell 4" type="button"></button>
+            <button class="cell" data-index="4" role="gridcell" aria-label="cell 5" type="button"></button>
+            <button class="cell" data-index="5" role="gridcell" aria-label="cell 6" type="button"></button>
+            <button class="cell" data-index="6" role="gridcell" aria-label="cell 7" type="button"></button>
+            <button class="cell" data-index="7" role="gridcell" aria-label="cell 8" type="button"></button>
+            <button class="cell" data-index="8" role="gridcell" aria-label="cell 9" type="button"></button>
+        </section>
+
+        <!-- Scoreboard -->
+        <section class="scoreboard" aria-label="Scoreboard">
+            <div class="score">
+                <span class="score-name" id="labelX">X</span>
+                <span class="score-value" id="scoreX">0</span>
+            </div>
+            <div class="score draws">
+                <span class="score-name">DRAWS</span>
+                <span class="score-value" id="scoreD">0</span>
+            </div>
+            <div class="score">
+                <span class="score-name" id="labelO">O</span>
+                <span class="score-value" id="scoreO">0</span>
+            </div>
+        </section>
+
+        <div class="actions">
+            <button class="btn" id="newRound" type="button">NEW ROUND</button>
+            <button class="btn ghost" id="resetScore" type="button">RESET SCORE</button>
+        </div>
+
+        <footer class="foot">
+            <p>Built for Assignment 3 &bull; <a href="../Assignment 3 Report Template.md">back to report</a></p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
